@@ -114,3 +114,38 @@ SELECT ename, job, sal, sal*12 AS annsal
 SELECT ename, job, sal, sal*12 AS annsal
  FROM emp
  WHERE ename LIKE '%RD';
+
+-- NULL 어떻게하냐 
+-- 함수명 NVL 나중에 설명해준대.. 
+SELECT ename, job, sal, comm
+ FROM emp
+ WHERE comm IS NULL;
+
+SELECT ename, job, sal, comm
+ FROM emp
+ WHERE comm IS NOT NULL; --IS NULL 반대로 하고 싶을 때 "NOT 사용"
+
+-- JOIN은 가로로 테이블 붙이는 것 / UNION은 세로로 테이블이 합쳐지는 것
+
+SELECT empno, ename, job FROM emp
+UNION
+SELECT deptno, dname, loc FROM dept;
+
+SELECT empno, ename, job FROM emp
+WHERE comm IS NOT NULL
+UNION
+SELECT deptno, dname, loc FROM dept;
+
+SELECT empno, ename, job FROM emp -- UNION 에서 WHERE 추가해서 구문만들수도있음!!!
+WHERE comm IS NULL
+UNION
+SELECT deptno, dname, loc FROM dept;
+
+
+SELECT * FROM emp ;
+
+
+
+
+
+ 
