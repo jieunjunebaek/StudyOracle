@@ -165,7 +165,7 @@ SELECT deptno, NVL(job, '합계') job,
 -- ORDER BY deptno , job;
 
 
--- *************************************************** 이거모르겠당
+-- *************************************************** 이거모르겠당 >> 테이블을 수정해야함 (대소문자 구분하여 식을 인식한다고합니당)
 SELECT deptno, job, AVG(sal), MAX(sal), MIN(sal), SUM(sal), COUNT(*)
  FROM emp
  GROUP BY deptno , job
